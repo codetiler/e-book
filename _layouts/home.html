@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    {% include head.html %}
+    <script src="{{site.url}}{{site.baseurl}}/assets/js/search.js"></script>
+</head>
+<body>
+<div class="container" style="padding-bottom: 20px;">
+    <div class="row" style="margin-top: 10px">
+        <div class="col-12 rounded " style="background-color: white;">
+            {% include search.html %}
+        </div>
+    </div>
+    <div class="row" style="margin-top: 10px;margin-bottom: 10px">
+        <div class="col-12 rounded" style="background-color: white;">
+            <a href="{{site.url}}{{site.baseurl}}/about">免责申明：本网站资源来自于网络收集，仅供学习交流使用，请下载者在24小时内删除下载的资源，如下载者将此资源用于其他非法用途，本站不承担任何法律责任；如有侵权请联系站长删除</a>
+        </div>
+    </div>
+    <div class="row " style="background-color: white;height: auto;">
+        {% for post in paginator.posts %}
+        <div class="col-lg-4 col-md-5" style="background-color: white;">
+            <div class="post-list shadow rounded " >
+                <div class="cover">
+                    <img src="{{site.url}}{{site.baseurl}}{{post.cover}}" style="max-width: 100%;" />
+                </div>
+                <div >
+                    <a  href="{{site.url}}{{site.baseurl}}{{post.url}}"><h5 style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{post.title}}</h5></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="row " style="background-color: white;;margin-top: 10px;margin-bottom: 50px;bottom: 50px;">
+        <div class="col-12 rounded " style="padding: 10px;">
+            {% include paginator.html %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
